@@ -1,0 +1,4 @@
+weights.best.from_scratch.hdf5
+weights.best.Inception.hdf5
+weights.best.Inception2.hdf5
+weights.best.VGG16.hdf5

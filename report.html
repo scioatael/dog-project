@@ -13699,7 +13699,11 @@ Ratio of detected dogs in dogs phots set: 1.000000
 <p>We have imported some Python modules to get you started, but feel free to import as many modules as you need.  If you end up getting stuck, here's a hint that specifies a model that trains relatively fast on CPU and attains &gt;1% test accuracy in 5 epochs:</p>
 <p><img src="images/sample_cnn.png" alt="Sample CNN"></p>
 <p><strong>Question 4:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  If you chose to use the hinted architecture above, describe why you think that CNN architecture should work well for the image classification task.</p>
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong>I went on with the net architecture similar to hinted one. We are using 3 convolutional layers which should pick on gradually more details in the training set.</p>
+<p>I used first the layer with 16 filters, meaning picking up on 16 basic patterns, the 2 next layers have proportionally more filters (32 and 64) to adress bigger amounts of more high-level features. Between the convolutional layers I applied max pooling layer of size 2 between the convolutional layers to help prevent overfitting and also reduce the dimensionality to speed up computations. In general using the convolution layers and CNNs overall is effective on image data, where is it important to learn features based on neighbouring pixels in the image - this is where convolutional layers and feature maps comes in hand.</p>
+<p>Global max pooling layer is used to bring more correspondance between high-level learned features and the target categories.</p>
+<p>Finally we apply the dense layer which will output 133 categories.</p>
+<p>The network gives us a satisfying results while still keeping the total amount of parameters relatively low enabling fas comuputation on standar laptop with single GPU.</p>
 
 </div>
 </div>
